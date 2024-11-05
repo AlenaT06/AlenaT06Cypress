@@ -1,0 +1,14 @@
+{
+"header_1": ".header__img",
+"pokemons_button": ".header__btn_active",
+"trainers_button": ".k_header_button_trainers",
+"raiting_button": ".k_header_button_ratings",
+"pokemons_title": ".pokemon__title",
+"trainers_id_numb": "header__id-texts",
+"trainers_image": ".header__id-img > .k_main_photo",
+"exit_button": ".top_menu_exit",
+"pokemons_img": ".pokemon__title",
+"pok_filtre": ".pokemon__text",
+"search_button":"#search-input",
+"filtr_button": ".pokemon__filter-btn"
+}

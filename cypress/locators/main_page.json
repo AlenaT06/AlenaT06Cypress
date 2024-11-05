@@ -1,0 +1,7 @@
+{
+  "Login": ":nth-child(1) > .auth__input",
+  "Password": "#password",
+  "Enter_button": ".auth__button",
+  "Reg_button": ".auth__form > .auth__text"
+  
+}
