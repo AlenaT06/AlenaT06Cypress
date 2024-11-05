@@ -2,31 +2,31 @@
 describe ('Покемоны большой тест ', function () {
             it('Позитивная прорверка авторизации', function () {
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин
-                cy.get('#password').type('Alena12345');//В поле пароль вводим корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин
+                cy.get('#password').type('PASSWORD');//В поле пароль вводим корректный пароль
                 cy.get('.auth__button').click();// Нажимаем на кнопку "войти", 
                 cy.get('.header__btn_active').visit ('https://pokemonbattle.ru/'); // Проверем, что после авторизации попадаем на страницу покемонов
         })
             it('Негативная прорверка авторизации', function () {
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин
-                cy.get('#password').type('Alena111111');//В поле пароль вводим НЕкорректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин
+                cy.get('#password').type('PASSWORD');//В поле пароль вводим НЕкорректный пароль
                 cy.get('.auth__button').click();// Нажимаем на кнопку "войти", 
                 cy.get(':nth-child(2) > .auth__error').contains('Неверные логин или пароль'); // Проверем, что после авторизации получаем сообщение "Неверные логин или пароль"
           
         })
             it('Прорверка валидации', function () {
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alenamail.ru');// В поле логин вводим логин без "@"
-                cy.get('#password').type('Alena12345');//В поле пароль вводим корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим логин без "@"
+                cy.get('#password').type('PASSWORD');//В поле пароль вводим корректный пароль
                 cy.get('.auth__button').click();// Нажимаем на кнопку "войти", 
                 cy.get(':nth-child(1) >.auth__error').contains('Введите почту'); // Проверем, что после авторизации получаем сообщение "Введите почту"  
         })
 
             it ('Проверка перехода на страницу тренеров', function () {
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин
-                cy.get('#password').type('Alena12345');//В поле пароль вводим корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин
+                cy.get('#password').type('PASSWORD');//В поле пароль вводим корректный пароль
                 cy.get('.auth__button').click();// Нажимаем на кнопку "войти", 
                 cy.get('body').visit('https://pokemonbattle.ru/trainer/7408');//Проверяем, что опция перехода на id тренера работает 
                 cy.get('body').click().visit('https://pokemonbattle.ru/trainer/7408');// Переходим на страницу тренера
@@ -34,8 +34,8 @@ describe ('Покемоны большой тест ', function () {
 
          it ('Позитивная проверка покупки автара', function () { 
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин
-                cy.get('#password').type('Alena12345');//В поле пароль вводим корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин
+                cy.get('#password').type('PASSWORD');//В поле пароль вводим корректный пароль
                 cy.get('.auth__button').click();// Нажимаем на кнопку "войти", 
                 cy.get('body').visit('https://pokemonbattle.ru/trainer/7408');//Проверяем, что опция перехода на id тренера работает 
                 cy.get('body').click().visit('https://pokemonbattle.ru/trainer/7408');// Переходим на страницу тренера
@@ -54,8 +54,8 @@ describe ('Покемоны большой тест ', function () {
         it ('Негативная  проверка покупки автара (Некорректные платежные данные сard number)', function () { 
                 
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин 
-                cy.get('#password').type('Alena12345');//В поле пароль ввожу корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин 
+                cy.get('#password').type('PASSWORD');//В поле пароль ввожу корректный пароль
                 cy.get('.auth__button').click();// Нажимаю на кнопку "войти", 
                 cy.get('.header__container > .header__id').visit('https://pokemonbattle.ru/trainer/7408');//Проверяем, что опция перехода на id тренера работает 
                 cy.get('body').click().visit('https://pokemonbattle.ru/trainer/7408');// Переходим на страницу тренера
@@ -70,8 +70,8 @@ describe ('Покемоны большой тест ', function () {
         it ('Негативная  проверка покупки автара (Некорректные платежные данные cvv)', function () { 
             
                 cy.visit('https://pokemonbattle.ru/login');//Заходим на сайт
-                cy.get(':nth-child(1) > .auth__input').type('trubitsyna.alena@mail.ru');// В поле логин вводим корректный логин 
-                cy.get('#password').type('Alena12345');//В поле пароль ввожу корректный пароль
+                cy.get(':nth-child(1) > .auth__input').type('LOGIN');// В поле логин вводим корректный логин 
+                cy.get('#password').type('PASSWORD');//В поле пароль ввожу корректный пароль
                 cy.get('.auth__button').click();// Нажимаемна кнопку "войти", 
                 cy.get('.header__container > .header__id').visit('https://pokemonbattle.ru/trainer/7408');//Проверяем, что опция перехода на id тренера работает 
                 cy.get('body').click().visit('https://pokemonbattle.ru/trainer/7408');// Переходим на страницу тренера
